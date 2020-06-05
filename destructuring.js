@@ -10,38 +10,34 @@
 
 // Do not edit the code below.
 var carDetails = {
-  color: 'red',
-  make: 'toyota',
-  model: 'tacoma',
+  color: "red",
+  make: "toyota",
+  model: "tacoma",
   year: 1994
-}
+};
 // Do not edit the code above.
 
 /*
-  Use object destructuring to save the property values from the object carDetails into new variables. 
+  Use object destructuring to save the property values from the object carDetails into new variables.
 */
 
-//Code Here
-
-
+const { color, make, model, year } = carDetails;
 
 ////////// PROBLEM 2 //////////
 
 /*
-  In the function below named greeting, it is receiving an object as a parameter. 
-  Use object destructuring to save the object properties to new variables. 
+  In the function below named greeting, it is receiving an object as a parameter.
+  Use object destructuring to save the object properties to new variables.
   The property names are firstName, lastName, and title.
 */
 
-function greeting( obj ) {
-  //Code Here
-  
+function greeting(obj) {
+  const { title, firstName, lastName } = obj;
+
   // Do not edit the code below.
-  return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
+  return "Hello, " + title + " " + firstName + " " + lastName + "!";
   // Do not edit the code above.
 }
-
-
 
 ////////// PROBLEM 3 //////////
 
@@ -53,23 +49,25 @@ function greeting( obj ) {
   Sum up the values and return the total number.
 */
 
-//Code Here
-
-
+function totalPopulation(obj) {
+  const { utah, california, texas, arizona } = obj;
+  return utah + california + texas + arizona;
+}
 
 ////////// PROBLEM 4 //////////
 
 /*
-  Write a function called ingredients that will take in an object. 
-  This object will have 3 properties named carb, fat, and protein. 
-  The property values will be strings. 
-  Use object destructuring to save the property values to new variables. 
-  Push these new variables to an array and return the array. 
+  Write a function called ingredients that will take in an object.
+  This object will have 3 properties named carb, fat, and protein.
+  The property values will be strings.
+  Use object destructuring to save the property values to new variables.
+  Push these new variables to an array and return the array.
 */
 
-//Code Here
-
-
+function ingredients(obj) {
+  const { carb, fat, protein } = obj;
+  return [carb, fat, protein];
+}
 
 ////////// PROBLEM 5 //////////
 
@@ -85,9 +83,16 @@ function greeting( obj ) {
   Find the smallest number of the three and return that number.
 */
 
-//Code Here
-
-
+function largeNumbers({ first, second, third }) {
+  let smallest = first;
+  if (second < smallest) {
+    smallest = second;
+  }
+  if (third < smallest) {
+    smallest = third;
+  }
+  return smallest;
+}
 
 ////////// PROBLEM 6 //////////
 
@@ -97,6 +102,13 @@ function greeting( obj ) {
   Find the longest array and return that array.
 */
 
-//Code Here
-
-
+function numberGroups({ a, b, c }) {
+  let largest = a;
+  if (b.length > largest.length) {
+    largest = b;
+  }
+  if (c.length > largest.length) {
+    largest = c;
+  }
+  return largest;
+}
